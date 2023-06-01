@@ -32,6 +32,8 @@ RUN apt-get install -y \
     ccache \
     cmake \
     ninja-build \
+    clang \
+    lld \
     && \
 # Install updated version of glslang
     add-apt-repository -y ppa:theofficialgman/gpu-tools && \

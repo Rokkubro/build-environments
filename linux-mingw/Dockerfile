@@ -8,6 +8,9 @@ RUN useradd -m -u 1027 -s /bin/bash citra && mkdir -p /tmp/pkgs && \
     echo "[ownstuff]" >> /etc/pacman.conf && \
     echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf && \
     echo "Server = https://martchus.no-ip.biz/repo/arch/ownstuff/os/\$arch" >> /etc/pacman.conf && \
+    echo "[clang64]" >> /etc/pacman.conf && \
+    echo "SigLevel = Optional TrustAll" >> /etc/pacman.conf && \
+    echo "Server = https://repo.msys2.org/mingw/clang64" >> /etc/pacman.conf && \
     pacman -Syu --noconfirm && \
     pacman -Syu --noconfirm && \
     pacman -S --needed --noconfirm --noprogressbar \
@@ -44,6 +47,9 @@ RUN useradd -m -u 1027 -s /bin/bash citra && mkdir -p /tmp/pkgs && \
     mingw-w64-zlib \
     mingw-w64-zstd \
     mingw-w64-glslang \
+    mingw-w64-clang-x86_64-qt6-base \
+    mingw-w64-clang-x86_64-qt6-multimedia \
+    mingw-w64-clang-x86_64-qt6-tools \
     && \
     pacman -Scc --noconfirm && \
     rm -rf /usr/share/man/ /tmp/* /var/tmp/ /usr/{i686-w64-mingw32,lib32} /usr/lib/gcc/i686-w64-mingw32 && \

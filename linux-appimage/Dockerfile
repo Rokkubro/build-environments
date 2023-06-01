@@ -24,6 +24,8 @@ RUN apt-get install -y \
     gcc-11 \
     g++-11 \
     cpp-11 \
+    clang \
+    lld \
 # Qt 5
     qtbase5-dev \
     qtbase5-private-dev \
