@@ -1,6 +1,6 @@
 #!/usr/bin/bash -e
 # install pefile
-pip3 install pefile
+pip3 install pefile --break-system-packages
 
 # ffmpeg
 FFMPEG_VER='6.0'
