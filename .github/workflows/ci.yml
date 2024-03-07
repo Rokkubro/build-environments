@@ -18,13 +18,13 @@ jobs:
       name: Setup Docker BuildX system
     - name: Login to DockerHub
       uses: docker/login-action@v2
-      if: (github.ref == 'refs/heads/master') && (github.repository == 'citra-emu/build-environments')
+      if: (github.ref == 'refs/heads/master') && (github.repository == 'Rokkubro/build-environments')
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - uses: docker/build-push-action@v4
       name: Build image
       with:
-        push: ${{ (github.ref == 'refs/heads/master') && (github.repository == 'citra-emu/build-environments') }}
+        push: ${{ (github.ref == 'refs/heads/master') && (github.repository == 'Rokkubro/build-environments') }}
         context: ${{ matrix.image }}
-        tags: citraemu/build-environments:${{ matrix.image }}
+        tags: rokkubro/build-environments:${{ matrix.image }}
